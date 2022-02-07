@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Calculadora de Calorías</title>
+        <link rel="stylesheet" href="css/calculadora_calorias.css" type="text/css">
+    </head>
+
+    <body>
+        <form id="form_calculadora_calorias" onsubmit="return Calculadora()">
+            <div class="div_calculadora">
+                <p class="titulo_calculadora">Sistema de medida</p>
+                <div  class="input_calculadora">
+                    <input type="radio" name="valoresdepesoyaltura" id="valordepesoyaltura_metrico" value="metrico" onclick="CambiarValoresMetrico()" checked><label class="label_sistemademedida">Métrico(cm/kg)</label>
+                </div>
+                <div  class="input_calculadora">
+                    <input type="radio" name="valoresdepesoyaltura" id="valordepesoyaltura_imperial" value="imperial" onclick="CambiarValoresImperial()"><label class="label_sistemademedida">Imperial(in/lbs)</label>
+                </div>
+            </div>
+
+            <div class="div_calculadora">
+                <p class="titulo_calculadora">Sexo</p>
+                <select id="opcionsexo" class="input_calculadora">
+                    <option name="mujer" id="mujer" value="mujer">Mujer</option>
+                    <option name="mujer" id="mujer" value="hombre">Hombre</option>
+                </select>
+            </div>
+
+            <div class="div_calculadora">
+                <p class="titulo_calculadora">Edad:</p>
+                <input type="number" placeholder="Edad" id="input_edad" step="1" class="input_calculadora" required>
+            </div>
+
+            <div class="div_calculadora">
+                <p class="titulo_calculadora">Altura:</p>
+                <input type="number" placeholder="Altura" id="input_altura" step="1" class="input_calculadora" required><label id="label_altura">cm</label>
+            </div>
+
+            <div class="div_calculadora">
+                <p class="titulo_calculadora">Peso:</p>
+                <input type="number" placeholder="Peso" id="input_peso" step="1" class="input_calculadora" required><label id="label_peso">kg</label>
+            </div>
+
+            <div class="div_calculadora">
+                <p class="titulo_calculadora">Nivel de actividad:</p>
+                <select id="opcion_actividad" class="input_calculadora">
+                    <option value="baja_actividad">Baja actividad</option>
+                    <option value="actividad_mediabaja" selected>Actividad media-baja</option>
+                    <option value="actividad_mediaalta">Actividad media-alta</option>
+                    <option value="mucha_actividad">Mucha actividad</option>
+                </select>
+            </div>
+
+            <div class="div_calculadora">
+                <p class="titulo_calculadora">Objetivo:</p>
+                <select id="opcion_objetivo" class="input_calculadora">
+                    <option value="perder_grasa">Perder grasa</option>
+                    <option value="mantenimiento" selected>Mantenimiento</option>
+                    <option value="ganar_masa_muscular">Ganar masa muscular</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Calcular" id="boton_calculadora_calorias">
+        </form>
+
+        <div class="div_resultados">
+            <div class="mostrar_resultados">
+                <img src="assets/img/calculadora-de-calorias.png" class="imagenes_resultado">
+                <span class="titulo_macros">Calorías:</span>
+                <span class="titulo_macros" id="calculo_tmb">--</span>
+            </div>
+            
+            <div class="mostrar_resultados">
+                <img src="assets/img/proteina.png" class="imagenes_resultado">
+                <span class="titulo_macros">Proteína:</span>
+                <span class="titulo_macros" id="calculo_proteina">--</span>
+            </div>
+
+            <div class="mostrar_resultados">
+                <img src="assets/img/grasa.png" class="imagenes_resultado">
+                <span class="titulo_macros">Grasa:</span>
+                <span class="titulo_macros" id="calculo_grasa">--</span>
+            </div>
+
+            <div class="mostrar_resultados">
+                <img src="assets/img/hidratos.png" class="imagenes_resultado">
+                <span class="titulo_macros">Hidratos:</span>
+                <span class="titulo_macros" id="calculo_hc">--</span>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="javascript/calculadora_calorias.js"></script>
+    </body>
+</html>
